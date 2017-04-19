@@ -8,7 +8,7 @@ These scripts are written for Linux based machines, to be used in a UNIX-Shell (
 
 ## Authors
 
-* **Maximilian Stiefel** - *Graduate student at Upsala University, Sweden*
+* **Maximilian Stiefel** - *Graduate student at Uppsala University, Sweden*
 * **Hannes Bohnengel** - *Graduate student at Technical University of Munich, Germany*
 
 ## Remarks
