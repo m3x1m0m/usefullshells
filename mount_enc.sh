@@ -5,7 +5,7 @@
 # in it. 							#
 #                                                               #
 # Author:           Maximilian Stiefel                          #
-# Last modified:    23. April 2017                              #
+# Last modified:    25. August 2017                             #
 # CLI usage:        ./mount_enc.sh				#
 # Required PKGs:    encfs, sudo					#
 #                                                               #
@@ -15,17 +15,17 @@
 # Vars								#
 #################################################################
 # Mountpoint for external drive 
-MOUNT_POINT="/media/sack/xxxx"						
+MOUNT_POINT="/media/blabla/xxx"						
 # Device identifier
-DEVICE="/dev/sdc34"
+DEVICE="/dev/sdax"
 # File system (-t option of mount)
-FILE_SYSTEM="fat32"
+FILE_SYSTEM="ext4"
 # Encfs enrypted files location
-ENC_LOC="$MOUNT_POINT/.sexy"
+ENC_LOC="$MOUNT_POINT/.xxx"
 # Encfs mount point
-ENC_MP="$MOUNT_POINT/sexy"
+ENC_MP="$MOUNT_POINT/xxx"
 # Link to mount point
-LINK="/home/sack/sssss"
+LINK="/home/maximilian/linki"
 
 # Command to execute for mounting
 MYCMD1="sudo mount -t $FILE_SYSTEM $DEVICE $MOUNT_POINT"	
@@ -37,6 +37,8 @@ MYCMD3=$(mount | grep $DEVICE)
 MYCMD4="encfs $ENC_LOC $ENC_MP"
 # Command to create link
 MYCMD5="ln -s $MOUNT_POINT $LINK"
+# Command to fire rhythmbox (do not fire rhythmbox before music lib is encrypted)
+MYCMD6="bash ~/launch_in_bg.sh rhythmbox"
 
 #################################################################
 # Action							#
@@ -87,5 +89,7 @@ then
 	echo	
 fi
 
-read -n1 -r -p "Waiting for termination. Press any key ... " key 
+echo "$MYCMD6"
+eval $MYCMD6
+read -r -p "Waiting for termination. Press any key ... " key 
 exit 0;

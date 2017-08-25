@@ -5,11 +5,11 @@
 # managers like i3wm (e.g. bash scripts).      			#
 #                                                               #
 # Author:           Maximilian Stiefel                          #
-# Last modified:    29. April 2017                              #
+# Last modified:    25. August 2017                             #
 # CLI usage:        Put in autostart script (e.g. ~/.i3/config) #
 #		    ./i3wm_cmd_wrapper.sh window_name 		#
 #		    path_to_script				#
-# Required PKGs:    xterm					#
+# Required PKGs:    gnome-terminal				#
 #                                                               #
 #################################################################
 
@@ -21,8 +21,12 @@ SCRIPT="$2"
 # Extracting window name
 WDW_NAME="$1"
 
-# Command to execute
-MYCMD1="xterm -T $WDW_NAME -e \"$SCRIPT\""	
+# Command 1
+MYCMD1="gnome-terminal --hide-menubar --name $WDW_NAME --window-with-profile=max_term_preferences -e "	
+# Command 2
+MYCMD2="$SCRIPT"
+# Command 3
+MYCMD3=$MYCMD1$MYCMD2
 # Expected number of params
 NU_PARAMS=2;
 
@@ -37,5 +41,5 @@ then
 		echo "./i3wm_cmd_wrapper.sh window_name path_to_script"	
 		exit 1;
 fi
-echo "$MYCMD1"
-xterm -T $WDW_NAME -e "$SCRIPT"
+echo "$MYCMD3"
+$MYCMD3
