@@ -4,7 +4,7 @@
 # Script to convert ASCII art to a C string.                    #
 #                                                               #
 # Author:           Maximilian Stiefel                          #
-# Last modified:    13. December 2017                           #
+# Last modified:    4 April 2018                                #
 # CLI usage:        ./convert_ascii_2_string.sh file string     #
 # Required PKGs:                                                #
 #                                                               #
@@ -28,7 +28,7 @@ if [ $# != $NU_PARAMS ]
   then
   echo "Error: Illegal number of parameters."
   echo "Correct usage is:"
-  echo "./convert_ascii_2_string.sh filename stingname"  
+  echo "./convert_ascii_2_string.sh filename stringname"  
   exit 1; 
 fi
 
