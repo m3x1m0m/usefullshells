@@ -5,7 +5,7 @@
 # Author:           Hannes Bohnengel
 # Last modified:    04/04/2018
 # Required pkgs:    sed
-# CLI usage:        findAndReplace.sh 
+# CLI usage:        findAndReplace.sh filename stringToBeReplaced newString
 # Description:      This shell script eases the use of sed 
 #                   to find and replace strings in text files.
 #                   http://clubmate.fi/replace-strings-in-files-with-the-sed-bash-command/
