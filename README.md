@@ -4,7 +4,7 @@ This repository contains usefull shell scripts for daily use.
 
 ## Prerequisites
 
-These scripts are written for Linux based machines, to be used in a UNIX-Shell (like `bash`).
+These scripts are written for Unix based machines (e.g. Linux, MacOS), to be used in a UNIX-Shell (like `bash`).
 
 ## Authors
 
