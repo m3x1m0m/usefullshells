@@ -7,7 +7,7 @@
 #                                                               #
 # Author:           Maximilian Stiefel                          #
 # Last modified:    26. April 2018                              #
-# CLI usage:        						#
+# CLI usage:        ./send_telegram_dynamic_ip bot chat		#
 # Required PKGs:    mail 					#
 #                                                               #
 #################################################################
@@ -37,8 +37,7 @@ ENTRY="@reboot  $FILE $BOT $CHAT_ID"
 while ! wget -q --spider http://google.com ; do true; done
 # Get private IP.
 CURRENT_IP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
-SUBJECT="IP of $HOST: $CURRENT_IP"
-MESSAGE="Hej! Ha en trevlig dag. IP adressen du ville veta är $CURRENT_IP."
+MESSAGE="Hej! Ha en trevlig dag. IP adressen av $HOST är $CURRENT_IP."
 # Instruct bot.
 curl -s -X POST $URL -d chat_id=$CHAT_ID -d text="$MESSAGE" > /dev/null
 echo "Message sent."
